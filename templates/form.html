@@ -6,9 +6,9 @@
 
 <body>
     {% if value %}
-    <p>Podana ilość {{code}} jest warta {{value}} PLN</p>
+    <p>{{quantity}} {{code}} jest warte {{value}} PLN</p>
     {% else %}
-    <form action="/" method="POST">
+    <form action="/rate" method="POST">
         <label for="currency">Wybierz walutę:</label>
         <select name="currency" id="currency">
             {% for item in items %}
