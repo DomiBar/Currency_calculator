@@ -1,11 +1,27 @@
 <!DOCTYPE html>
+
 <head>
-    <meta> charset="UTF-8"
+    <meta charset="UTF-8" />
 </head>
+
 <body>
-    <select name="currency" id="currency">
-        {% for i in items %}
-        <option value=i>i</option>
-        {%endfor%}
-    </select>
+    {% if value %}
+    <p>Podana ilość {{code}} jest warta {{value}} PLN</p>
+    {% else %}
+    <form action="/" method="POST">
+        <label for="currency">Wybierz walutę:</label>
+        <select name="currency" id="currency">
+            {% for item in items %}
+            <option value={{item}}>{{item}}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="quantity">Podaj ilość:
+            <input type="number" name="quantity" id="quantity" step="0.01" value="0">
+        </label><br>
+
+        <input type="submit" value="Przelicz">
+    </form>
+    {% endif %}
+
 </body>
