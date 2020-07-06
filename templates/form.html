@@ -2,26 +2,29 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <body>
     {% if value %}
     <p>{{quantity}} {{code}} jest warte {{value}} PLN</p>
     {% else %}
-    <form action="/rate" method="POST">
-        <label for="currency">Wybierz walutę:</label>
-        <select name="currency" id="currency">
-            {% for item in items %}
-            <option value={{item}}>{{item}}</option>
-            {% endfor %}
-        </select><br>
+    <div id="form">
+        <form action="/rate" method="POST">
+            <label for="currency">Wybierz walutę:</label>
+            <select name="currency" id="currency">
+                {% for item in items %}
+                <option value={{item}}>{{item}}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="quantity">Podaj ilość:
-            <input type="number" name="quantity" id="quantity" step="0.01" value="0">
-        </label><br>
+            <label for="quantity">Podaj ilość:
+                <input type="number" name="quantity" id="quantity" step="0.01" value="0">
+            </label><br>
 
-        <input type="submit" value="Przelicz">
-    </form>
+            <input type="submit" value="Przelicz">
+        </form>
+    </div>
     {% endif %}
 
 </body>

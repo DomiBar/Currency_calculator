@@ -1,0 +1,28 @@
+body{
+    background-color: silver;
+}
+
+div#form{
+    position: absolute;
+    left: 30%;
+    top: 10%;
+}
+
+select#currency{
+    color: green;
+    margin: 10px;
+    border: 2px solid green;
+}
+input#quantity{
+    width: 50px;
+    margin: 10px;
+    margin-left: 38px;
+    color: red;
+    border: 2px solid red;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+    border: 2px dashed white;
+}
